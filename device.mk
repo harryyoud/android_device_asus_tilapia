@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# the actual meat of the device-specific product definition
+$(call inherit-product, device/asus/grouper/device-common.mk)
+
 # rild
 PRODUCT_PACKAGES += \
     rild \
@@ -21,9 +24,10 @@ PRODUCT_PACKAGES += \
     libstlport
 
 PRODUCT_COPY_FILES := \
-    device/asus/tilapia/fstab.grouper:root/fstab.grouper \
-    device/asus/tilapia/init.recovery.tilapia.rc:root/init.recovery.grouper.rc \
-    device/asus/tilapia/init.tilapia.rc:root/init.grouper.rc
+    device/asus/grouper/rootdir/init.grouper.rc:root/init.grouper.common.rc \
+    device/asus/tilapia/rootdir/fstab.grouper:root/fstab.grouper \
+    device/asus/tilapia/rootdir/init.recovery.tilapia.rc:root/init.recovery.grouper.rc \
+    device/asus/tilapia/rootdir/init.tilapia.rc:root/init.grouper.rc
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/asus/tilapia/overlay

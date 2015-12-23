@@ -1,0 +1,42 @@
+import init.grouper.common.rc
+
+on init
+    # Set init and its forked children's oom_adj.
+    write /proc/1/oom_score_adj -1000
+    mount debugfs debugfs /sys/kernel/debug
+
+on fs
+    mkdir /factory 0775 radio radio
+
+on post-fs-data
+    mkdir /data/radio 0775 radio radio
+    mkdir /data/radio/log 0775 radio radio
+
+on boot
+# Proximity for RIL BODYSAR
+    chmod 0660 /sys/devices/platform/tegra-i2c.2/i2c-2/2-0028/sensor_onoff
+    chown root radio /sys/devices/platform/tegra-i2c.2/i2c-2/2-0028/sensor_onoff
+
+# RIL
+    chown radio system /sys/devices/virtual/ril/files/crash_dump_onoff
+    chown radio system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0660 /sys/devices/virtual/ril/files/crash_dump_onoff
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown radio system /sys/devices/platform/baseband_xmm_power/xmm_nml_reset
+    chown radio system /sys/devices/platform/baseband_xmm_power/xmm_force_crash
+    chown radio system /sys/class/ril/files/stop_hotplug_detect
+
+# the following settings are used to disable ipv6 on cellular networks that cannot
+# support it.
+
+on property:ril.ipv6.rmnet0.enable=1
+    write /proc/sys/net/ipv6/conf/rmnet0/disable_ipv6 0
+
+on property:ril.ipv6.rmnet0.enable=0
+    write /proc/sys/net/ipv6/conf/rmnet0/disable_ipv6 1
+
+on property:ril.ipv6.rmnet1.enable=1
+    write /proc/sys/net/ipv6/conf/rmnet1/disable_ipv6 0
+
+on property:ril.ipv6.rmnet1.enable=0
+    write /proc/sys/net/ipv6/conf/rmnet1/disable_ipv6 1
