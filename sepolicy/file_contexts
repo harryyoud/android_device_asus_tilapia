@@ -1,0 +1,6 @@
+# Devices
+/dev/ttyACM0                      u:object_r:radio_device:s0
+/dev/ttyACM1                      u:object_r:baseband_log_device:s0
+
+# Sysfs files
+/sys/devices/platform/tegra-i2c.2/i2c-2/2-0028/sensor_onoff  u:object_r:sysfs_proximity_sensor:s0
