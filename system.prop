@@ -1,22 +1,27 @@
-ro.opengles.version = 131072
-wifi.interface=wlan0
-rild.libpath=/vendor/lib/libxgold-ril.so
-rild.libargs=-d /dev/ttyACM0
-persist.tegra.nvmmlite = 1
+# EGL
+ro.opengles.version=131072
+debug.hwui.render_dirty_regions=false
+persist.tegra.nvmmlite=1
 ro.audio.monitorOrientation=true
 
-#NFC
+# Don't preload OpenGL in Zygote, the Tegra drivers do not like it
+ro.zygote.disable_gl_preload=true
+
+# Set default LCD density to TVDPI
+ro.sf.lcd_density=213
+
+# Wi-Fi
+wifi.interface=wlan0
+
+# NFC
+ro.nfc.port=I2C
 debug.nfc.fw_download=false
 debug.nfc.se=false
 
-# set default lcd density to TVDPI
-ro.sf.lcd_density=213
-
-# don't preload OpenGL in Zygote, the Tegra drivers do not like it
-ro.zygote.disable_gl_preload=true
-
-# configure PRISM
-persist.tegra.didim.video = 5
-
-# disable PRISM by default
+# Configure PRISM, but disable it by default
+persist.tegra.didim.video=5
 persist.tegra.didim.enable=0
+
+# RILD
+rild.libpath=/vendor/lib/libxgold-ril.so
+rild.libargs=-d /dev/ttyACM0
