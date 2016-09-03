@@ -32,9 +32,6 @@
 USE_CAMERA_STUB := true
 USE_PROPRIETARY_AUDIO_EXTENSIONS := false
 
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_tilapia
-TARGET_RECOVERY_UPDATER_EXTRA_LIBS := libIMCdownload libPrgHandler
-
 TARGET_RELEASETOOLS_EXTENSIONS := device/asus/tilapia
 
 -include vendor/asus/tilapia/BoardConfigVendor.mk
@@ -44,3 +41,4 @@ TARGET_RECOVERY_FSTAB = device/asus/tilapia/rootdir/fstab.grouper
 
 # Security
 BOARD_SEPOLICY_DIRS += device/asus/tilapia/sepolicy
+
