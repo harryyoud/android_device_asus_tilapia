@@ -23,5 +23,5 @@ persist.tegra.didim.video=5
 persist.tegra.didim.enable=0
 
 # RILD
-rild.libpath=/vendor/lib/libxgold-ril.so
+rild.libpath=/system/lib/libxgril-shim.so
 rild.libargs=-d /dev/ttyACM0

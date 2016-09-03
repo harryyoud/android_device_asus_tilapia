@@ -31,6 +31,7 @@ $(call inherit-product, vendor/asus/tilapia/asus-vendor.mk)
 # rild
 PRODUCT_PACKAGES += \
     rild \
+    libxgril-shim \
     BasicSmsReceiver \
     libstlport
 
