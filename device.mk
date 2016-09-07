@@ -35,5 +35,6 @@ PRODUCT_PACKAGES += \
     BasicSmsReceiver \
     libstlport
 
-DEVICE_PACKAGE_OVERLAYS := \
-    device/asus/tilapia/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    device/asus/tilapia/overlay \
+    device/asus/grouper/overlay
