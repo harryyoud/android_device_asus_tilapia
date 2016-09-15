@@ -25,14 +25,15 @@ PRODUCT_COPY_FILES := \
 # the actual meat of the device-specific product definition
 $(call inherit-product, device/asus/grouper/device-common.mk)
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 # the actual meat of the device-specific product definition
 $(call inherit-product, vendor/asus/tilapia/asus-vendor.mk)
 
 # rild
 PRODUCT_PACKAGES += \
-    rild \
     libxgril-shim \
-    BasicSmsReceiver \
     libstlport
 
 DEVICE_PACKAGE_OVERLAYS += \
