@@ -14,10 +14,11 @@
 # limitations under the License.
 #
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 # Inherit from tilapia device
 $(call inherit-product, device/asus/tilapia/device.mk)
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := aosp_tilapia
