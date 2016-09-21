@@ -15,7 +15,15 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+# Get the long aosp list of APNs
+PRODUCT_COPY_FILES += \
+    device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+
+# Enable sms for aosp product
+PRODUCT_PACKAGES += \
+    messaging
 
 # Inherit from tilapia device
 $(call inherit-product, device/asus/tilapia/device.mk)

@@ -30,6 +30,8 @@ $(call inherit-product, vendor/asus/tilapia/asus-vendor.mk)
 
 # rild
 PRODUCT_PACKAGES += \
+    CarrierConfig \
+    rild \
     libxgril-shim \
     libstlport
 
