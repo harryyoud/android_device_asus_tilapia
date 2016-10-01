@@ -17,7 +17,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/asus/tilapia
 -include vendor/asus/tilapia/BoardConfigVendor.mk
 include device/asus/grouper/BoardConfigCommon.mk
 
-TARGET_RECOVERY_FSTAB = device/asus/tilapia/rootdir/fstab.grouper
+TARGET_RECOVERY_FSTAB := device/asus/tilapia/rootdir/fstab.grouper
 
 # Security
 BOARD_SEPOLICY_DIRS += device/asus/tilapia/sepolicy
