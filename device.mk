@@ -22,12 +22,6 @@ PRODUCT_COPY_FILES := \
     device/asus/tilapia/rootdir/init.recovery.tilapia.rc:root/init.recovery.grouper.rc \
     device/asus/tilapia/rootdir/init.tilapia.rc:root/init.grouper.rc
 
-# the actual meat of the device-specific product definition
-$(call inherit-product, device/asus/grouper/device-common.mk)
-
-# the actual meat of the device-specific product definition
-$(call inherit-product, vendor/asus/tilapia/asus-vendor.mk)
-
 # rild
 PRODUCT_PACKAGES += \
     CarrierConfig \
