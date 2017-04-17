@@ -16,7 +16,6 @@
 
 PRODUCT_COPY_FILES := \
     device/asus/grouper/rootdir/init.grouper.rc:root/init.grouper.common.rc \
-    device/asus/grouper/rootdir/init.grouper.power.rc:root/init.grouper.power.rc \
     device/asus/grouper/rootdir/init.grouper.sensors.rc:root/init.grouper.sensors.rc \
     device/asus/tilapia/rootdir/fstab.grouper:root/fstab.grouper \
     device/asus/tilapia/rootdir/init.recovery.tilapia.rc:root/init.recovery.grouper.rc \
