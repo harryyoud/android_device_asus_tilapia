@@ -24,9 +24,6 @@ PRODUCT_COPY_FILES := \
 # the actual meat of the device-specific product definition
 $(call inherit-product, device/asus/grouper/device-common.mk)
 
-# the actual meat of the device-specific product definition
-$(call inherit-product, vendor/asus/tilapia/asus-vendor.mk)
-
 # rild
 PRODUCT_PACKAGES += \
     CarrierConfig \

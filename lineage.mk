@@ -1,0 +1,26 @@
+# Release name
+PRODUCT_RELEASE_NAME := Nexus7-GSM
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 800
+
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+
+# Inherit telephony common stuff
+$(call inherit-product, vendor/cm/config/telephony.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/asus/tilapia/device.mk)
+
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := tilapia
+PRODUCT_NAME := lineage_tilapia
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Nexus 7
+PRODUCT_MANUFACTURER := Asus
+
+#Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasig BUILD_FINGERPRINT="google/nakasig/tilapia:5.1/LMY47D/1743759:user/release-keys" PRIVATE_BUILD_DESC="nakasig-user 5.1 LMY47D 1743759 release-keys"
+
